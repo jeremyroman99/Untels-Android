@@ -18,10 +18,12 @@ jobs:
         java-version: '17'
     - name: Permisos
       run: chmod +x gradlew
+    - name: build release 
+      run: ./gradlew build
     - name: Carpeta app
-      run: cd app
-    - name: LS
-      run: ls
+      run: |
+        cd app
+        ls
     - name: build release 
       run: ./gradlew assembleRelease
     - name: upload artifact to Firebase App Distribution
