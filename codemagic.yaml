@@ -20,6 +20,7 @@ workflows:
           include: true
           source: true
     scripts:
+        - java -version
         - name: Set Android SDK location
           script: |
             echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"
