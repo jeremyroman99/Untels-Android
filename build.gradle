@@ -1,3 +1,13 @@
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.4.2'
+    }
+}
+
 plugins {
     id 'com.android.application' version '8.0.2' apply false
     id 'com.android.library' version '8.0.2' apply false
@@ -11,5 +21,18 @@ sonarqube {
     property "sonar.projectKey", "JeremyRoman99_Untels-Android"
     property "sonar.organization", "jeremyroman99"
     property "sonar.host.url", "https://sonarcloud.io"
+    property 'sonar.jacoco.reportPaths', 'build/jacoco/testDebugUnitTest.exec'
+    property 'sonar.coverage.exclusions', "**/model/**"
   }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
