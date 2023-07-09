@@ -21,4 +21,11 @@
     <string name="type_something">type something…</string>
     <string name="open_activity_and_change_text">Open activity and change text</string>
     <string name="appbar_scrolling_view_behavior">androidx.coordinatorlayout.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="hello_first_fragment">Hello from the first fragment!</string>
+    <string name="next">Next</string>
+    <string name="previous">previous</string>
+    <string name="action_settings">action_settings</string>
+    <string name="first_fragment_label">first_fragment_label</string>
+    <string name="second_fragment_label">second_fragment_label</string>
+
 </resources>
