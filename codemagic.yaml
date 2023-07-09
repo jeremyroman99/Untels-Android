@@ -20,6 +20,8 @@ workflows:
           include: true
           source: true
     scripts:
+      - flutter pub get # Instalar dependencias
+      - flutter build apk --debug
       - name: Set up local properties
         script: echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"  
       - ls

@@ -9,11 +9,3 @@ plugins {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-
-sonar {
-  properties {
-    property "sonar.projectKey", "untels"
-    property "sonar.organization", "untels"
-    property "sonar.host", "https://sonarcloud.io"
-  }
-}
