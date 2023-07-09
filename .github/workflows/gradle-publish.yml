@@ -20,11 +20,13 @@ jobs:
       run: chmod +x gradlew
     - name: build release 
       run: ./gradlew build
-    - name: Carpeta app
+    - name: Carpeta apk
       run: |
-        cd app
+        cd app/build/outputs/apk
         ls
-        cd build
+    - name: Carpeta debug
+      run: |
+        cd app/build/outputs/apk/debug
         ls
     - name: build release 
       run: ./gradlew assembleRelease
