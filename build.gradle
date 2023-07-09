@@ -6,10 +6,10 @@ plugins {
     id "org.sonarqube" version "4.2.1.3168"
 }
 
-sonarqube {
+sonar {
   properties {
     property "sonar.projectKey", "JeremyRoman99_sonarcloud"
     property "sonar.organization", "jeremyroman99"
-    property "sonar.host", "https://sonarcloud.io"
+    property "sonar.host.url", "https://sonarcloud.io"
   }
 }
