@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android-extensions'
 
 android {
     namespace 'com.example.myapplication'
@@ -41,6 +40,9 @@ android {
         resources {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
+    }
+    viewBinding {
+        enabled = true
     }
 }
 
