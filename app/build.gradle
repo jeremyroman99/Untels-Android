@@ -82,4 +82,7 @@ dependencies {
     testImplementation 'androidx.test.espresso:espresso-core:' + rootProject.espressoVersion
     testImplementation 'androidx.test.espresso:espresso-intents:' + rootProject.espressoVersion
     testImplementation 'androidx.test.ext:truth:' + rootProject.extTruthVersion
+
+    // Dependencia para Data Binding
+    kapt "com.android.databinding:compiler:3.1.4" // Si usas Kotlin
 }
