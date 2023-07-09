@@ -20,8 +20,6 @@ workflows:
           include: true
           source: true
     scripts:
-        - cd ./Library/Java/JavaVirtualMachines/
-        - ls
         - java -version
         - name: Set Android SDK location
           script: |
