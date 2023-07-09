@@ -30,12 +30,10 @@ jobs:
           restore-keys: ${{ runner.os }}-gradle
       - name: Permisos
         run: chmod +x gradlew
-      - name: test
-        run: ./gradlew test --stacktrace
       - name: Build and analyze
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: ./gradlew jacocoUnitTestReport sonarqube -Dsonar.login=${{ secrets.SONAR_TOKEN }} --stacktrace
+        run: ./gradlew build sonar --info
 
 
