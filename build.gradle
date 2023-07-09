@@ -9,8 +9,8 @@ plugins {
 
 sonar {
   properties {
-    property "sonar.projectKey", "untels"
-    property "sonar.organization", "untels"
+    property "sonar.projectKey", "JeremyRoman99_Untels-Android"
+    property "sonar.organization", "jeremyroman99"
     property "sonar.host", "https://sonarcloud.io"
   }
 }
