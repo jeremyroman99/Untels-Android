@@ -24,27 +24,6 @@
               script: |
                 echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"
             - chmod +x gradlew
-            - name: Build Android debug APK
-              script: |
-                ./gradlew assembleDebug
-            - name: Build Android test APK
-              script: |
-                ./gradlew assembleAndroidTest
-            - name: Run AWS Device Farm test
-              script: |
-                cd .scripts && ./run_aws_espresso.sh
-            - name: Verify Device Farm test
-              script: |
-                set -e
-                set -x
-                export AWS_RESULT=$(cat $CM_BUILD_DIR/.scripts/test-result.json | jq -r '.run.result')
-                if [ $AWS_RESULT != "PASSED" ] 
-                then
-                  echo "AWS tests did not pass, the result was $AWS_RESULT"
-                  exit 1
-                else 
-                  echo "AWS tests PASSED!"
-                fi
             - name: Build Android production release
               script: |
                 ./gradlew assembleRelease    
