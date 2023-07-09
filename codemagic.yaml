@@ -7,7 +7,6 @@ workflows:
       cache_paths:
         - ~/.sonar
     environment:
-      sdk: "mannequin/openjdk:17"
       #android_signing:
       #  - codemagic_keystore
       groups:
