@@ -20,14 +20,6 @@ jobs:
       run: chmod +x gradlew
     - name: build release 
       run: ./gradlew build
-    - name: Carpeta apk
-      run: |
-        cd app/build/outputs/apk
-        ls
-    - name: Carpeta debug
-      run: |
-        cd app/build/outputs/apk/debug
-        ls
     - name: build release 
       run: ./gradlew assembleRelease
     - name: upload artifact to Firebase App Distribution
@@ -36,4 +28,4 @@ jobs:
         appId: 1:27123300702:android:da91c6d1df6d47180f37cf
         serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
         groups: testers
-        file: app\build\outputs\apk\debug\app-debug.apk
+        file: app/build/outputs/apk/debug/app-debug.apk
