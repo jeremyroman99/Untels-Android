@@ -24,9 +24,8 @@
               script: |
                 echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"
             - chmod +x gradlew
-            - name: Build Android production release
-              script: |
-                ./gradlew assembleRelease    
+            - ./gradlew clean
+            - ./gradlew assembleRelease    
         artifacts:
             - app/build/outputs/**/*.apk
         #publishing:
