@@ -24,6 +24,8 @@ jobs:
       run: |
         cd app
         ls
+        cd build
+        ls
     - name: build release 
       run: ./gradlew assembleRelease
     - name: upload artifact to Firebase App Distribution
