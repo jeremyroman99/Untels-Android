@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.myapplication'
+    namespace 'com.untels.android'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.myapplication"
+        applicationId "com.untels.android"
         minSdk 28
         targetSdk 33
         versionCode 1
