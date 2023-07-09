@@ -1,7 +1,10 @@
-apply plugin: 'kotlin-android'
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android-extensions'
-
+plugins {
+  id 'com.android.application'
+  id 'kotlin-android'
+  id 'kotlin-android-extensions'
+  // Add the Google services Gradle plugin
+  id 'com.google.gms.google-services'
+}
 
 android {
     namespace 'com.example.myapplication'
@@ -64,4 +67,6 @@ dependencies {
     androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
     debugImplementation 'androidx.compose.ui:ui-tooling'
     debugImplementation 'androidx.compose.ui:ui-test-manifest'
+    implementation platform('com.google.firebase:firebase-bom:32.1.1')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
 }

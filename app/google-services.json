@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "27123300702",
+    "project_id": "untels-android",
+    "storage_bucket": "untels-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:27123300702:android:da91c6d1df6d47180f37cf",
+        "android_client_info": {
+          "package_name": "com.untels.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "27123300702-auk881ti1r9ootrke8r36u2vprbmkh8d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMee2nvP8KFdxLmcJ-P0mveY2vvzJVXns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "27123300702-auk881ti1r9ootrke8r36u2vprbmkh8d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
