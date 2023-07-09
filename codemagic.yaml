@@ -7,8 +7,8 @@ workflows:
       cache_paths:
         - ~/.sonar
     environment:
-      android_signing:
-        - codemagic_keystore
+      #android_signing:
+      #  - codemagic_keystore
       groups:
         - sonarcloud_credentials
     triggering:
@@ -25,6 +25,9 @@ workflows:
       - name: Build Android app
         script: |
           ./gradlew assembleRelease
+      - name: Build Android app
+        script: |
+          ./gradlew sonar
       - name: Generate and upload code analysis report
         script: |
           ./gradlew sonarqube \
@@ -33,13 +36,13 @@ workflows:
             -Dsonar.login=$SONAR_TOKEN
     artifacts:
       - app/build/outputs/**/**/*.apk
-    publishing:
-      email:
-        recipients:
-          - user@email.com
-      slack:
-        channel: '#testing'
-        notify_on_build_start: true # To receive a notification when a build starts
-        notify:
-          success: true # To not receive a notification when a build succeeds
-          failure: false 
+    #publishing:
+    #  email:
+    #    recipients:
+    #      - user@email.com
+    #  slack:
+    #    channel: '#testing'
+    #    notify_on_build_start: true # To receive a notification when a build starts
+    #    notify:
+    #      success: true # To not receive a notification when a build succeeds
+    #      failure: false 
