@@ -2,13 +2,42 @@ plugins {
   id 'com.android.application'
   id 'kotlin-android'
   id 'kotlin-android-extensions'
-  // Add the Google services Gradle plugin
   id 'com.google.gms.google-services'
+  id 'jacoco'
+  id 'org.sonarqube'
 }
 
 android {
     namespace 'com.untels.android'
     compileSdk 33
+
+    jacoco {
+    toolVersion = "0.8.7"
+    }
+
+    sonarqube {
+        properties {
+            property "sonar.projectKey", "JeremyRoman99_Untels-Android"
+            property "sonar.organization", "jeremyroman99"
+            property "sonar.host.url", "https://sonarcloud.io"
+        }
+    }
+
+    tasks.named("test") {
+        jacoco.includeNoLocationClasses = true
+    }
+
+    tasks.register("jacocoUnitTestReport") {
+        dependsOn("testDebugUnitTest")
+        reports {
+            xml.isEnabled = true
+            html.isEnabled = true
+        }
+    }
+
+    tasks.named("sonarqube") {
+        dependsOn("jacocoUnitTestReport")
+    }
 
     defaultConfig {
         applicationId "com.untels.android"
