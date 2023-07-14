@@ -2,8 +2,8 @@ plugins {
   id 'com.android.application'
   id 'kotlin-android'
   id 'kotlin-android-extensions'
-  // Add the Google services Gradle plugin
   id 'com.google.gms.google-services'
+  id 'jacoco'
 }
 
 android {
