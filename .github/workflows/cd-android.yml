@@ -13,8 +13,8 @@ jobs:
         java-version: '17'
     - name: Permisos
       run: chmod +x gradlew
-    #- name: build release 
-    #  run: ./gradlew build
+    - name: build release 
+      run: ./gradlew build
     - name: build release 
       run: ./gradlew assembleRelease
     #- name: upload artifact to Firebase App Distribution
