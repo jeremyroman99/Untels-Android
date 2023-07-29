@@ -38,14 +38,40 @@ jobs:
        uses: actions/download-artifact@v1
        with:
          name: APK
-     - name: Create Release
+     - name: Obtener la última versión del release
+       id: get_latest_release
+       run: |
+          # Llamar a la API de GitHub para obtener el último release
+          latest_release=$(curl -s https://api.github.com/repos/${{ github.repository }}/releases/latest | jq -r '.tag_name')
+          echo "Último release: $latest_release"
+
+          # Extraer el número de versión y aumentarlo en uno
+          version=$(echo $latest_release | cut -c 2-) # Eliminar el prefijo 'v'
+          IFS='.' read -r major minor patch <<< "$version"
+          ((patch++))
+          new_version="v${major}.${minor}.${patch}"
+
+          echo "Nueva versión: $new_version"
+
+          # Establecer la nueva versión como variable de entorno
+          echo "NEW_VERSION=${new_version}" >> $GITHUB_ENV
+     - name: Crear Release
        id: create_release
        uses: actions/create-release@v1
        env:
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
        with:
-         tag_name: v1.0.3
-         release_name: Release v1.0.3
+          tag_name: ${{ env.NEW_VERSION }} # Utilizar la versión generada dinámicamente
+          release_name: Release ${{ env.NEW_VERSION }} estoy agregando este ${{ env.NEW_VERSION }} de forma manual
+
+     #- name: Create Release
+     #  id: create_release
+     #  uses: actions/create-release@v1
+     #  env:
+     #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+     #  with:
+     #    tag_name: v1.0.3
+     #    release_name: Release v1.0.3
 
      - name: Upload Release
        id: upload_release_asset
