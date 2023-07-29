@@ -1,4 +1,4 @@
-name: Gradle Package
+name: cd-android
 on:
   push:
     branches: [develop, release, main]
