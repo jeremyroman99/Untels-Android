@@ -6,7 +6,6 @@ jobs:
   build:
     name: build
     runs-on: ubuntu-latest
-    if: ${{ github.ref }} == 'release'
     steps:
     - name: Set Branch Name
       run: echo $GITHUB_ENV
