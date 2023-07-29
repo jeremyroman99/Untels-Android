@@ -17,13 +17,13 @@ jobs:
     #  run: ./gradlew build
     - name: build release 
       run: ./gradlew assembleRelease
-    - name: upload artifact to Firebase App Distribution
-      uses: wzieba/Firebase-Distribution-Github-Action@v1
-      with:
-        appId: 1:27123300702:android:da91c6d1df6d47180f37cf
-        serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
-        groups: testers
-        file: app/build/outputs/apk/debug/app-debug.apk
+    #- name: upload artifact to Firebase App Distribution
+    #  uses: wzieba/Firebase-Distribution-Github-Action@v1
+    #  with:
+    #    appId: 1:27123300702:android:da91c6d1df6d47180f37cf
+    #    serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
+    #    groups: testers
+    #    file: app/build/outputs/apk/debug/app-debug.apk
     - name: Upload App Bundle
       uses: actions/upload-artifact@v1
       with:
