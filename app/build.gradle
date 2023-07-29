@@ -69,4 +69,16 @@ dependencies {
     debugImplementation 'androidx.compose.ui:ui-test-manifest'
     implementation platform('com.google.firebase:firebase-bom:32.1.1')
     implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.example:simple-library:0.2.0'
+}
+
+repositories {
+    maven {
+        name = "GitHubPackages"
+        url = uri("https://maven.pkg.github.com/PatilShreyas/AndroidGPR")
+        credentials {
+            username = 'JJROMAN'
+            password = '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'
+        }
+    }
 }
