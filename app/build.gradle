@@ -4,6 +4,7 @@ plugins {
   id 'kotlin-android-extensions'
   id 'com.google.gms.google-services'
   id 'jacoco'
+  id 'newrelic'
 }
 
 android {
@@ -69,4 +70,5 @@ dependencies {
     debugImplementation 'androidx.compose.ui:ui-test-manifest'
     implementation platform('com.google.firebase:firebase-bom:32.1.1')
     implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.newrelic.agent.android:android-agent:6.6.0'
 }

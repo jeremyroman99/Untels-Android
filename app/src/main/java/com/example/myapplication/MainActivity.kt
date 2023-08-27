@@ -11,10 +11,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.untels.android.ui.theme.MyApplicationTheme
+import com.newrelic.agent.android.NewRelic
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        NewRelic.withApplicationToken(
+        "AA368918252812a0dca615fab5610b4d562ac29840-NRMA"
+        ).start(this.applicationContext)
         setContent {
             MyApplicationTheme {
                 // A surface container using the 'background' color from the theme
@@ -32,7 +36,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
-        text = "Hello Untels JEREMY $name!",
+        text = "Hello Untels Ing.JeremyRoman $name!",
         modifier = modifier
     )
 }
