@@ -1,9 +1,7 @@
 name: ci-sonarqube-android
 on:
   pull_request:
-    branches: [develop, release, main]
-    paths:
-      - ".github/workflows/ci-sonarqube-android.yml"
+    branches: [develop, release]
 jobs:
   SonarCloud:
     name: Build and analyze
